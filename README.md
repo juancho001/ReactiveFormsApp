@@ -31,4 +31,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 # Contenido
 ```bash
 1. Creación del nuevo Proyecto
+2. Creando los directorios
 ```
