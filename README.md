@@ -32,4 +32,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 ```bash
 1. Creación del nuevo Proyecto
 2. Creando los directorios
+3. Configuración inicial de las rutas
 ```
