@@ -1,10 +1,40 @@
 import { Component } from '@angular/core';
+import { reactiveRoutes } from '../../../reactive/reactive.routes';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+interface menuItem {
+  title:string;
+  route:string;
+}
+
+const reactiveItems = reactiveRoutes[0].children ?? []
 
 @Component({
   selector: 'app-side-menu',
-  imports: [],
+  imports: [RouterLink,RouterLinkActive],
   templateUrl: './side-menu.component.html',
 })
 export class SideMenuComponent {
+
+  reactiveMenu: menuItem[] = reactiveItems
+  .filter((item) => item.path != '**')
+  .map(item =>({
+    route: `reactive/${item.path}`,
+    title: `${item.title}`,
+  }));
+
+  autMenu: menuItem[] = [
+    {
+      title:'Registro',
+      route:'./auth'
+    }
+  ];
+
+    countyMenu: menuItem[] = [
+    {
+      title:'Paises',
+      route:'./country'
+    }
+  ];
 
 }
