@@ -27,9 +27,12 @@ myForm: FormGroup = this.formBuilder.group({
   // })
 
 
-isValidField(fielName:string):boolean{
+isValidField(fielName:string):boolean | null{
   //  console.log(this.myForm.controls[fielName].valid)
-  return !!this.myForm.controls[fielName].errors
+  return (
+     this.myForm.controls[fielName].errors &&
+     this.myForm.controls[fielName].touched
+    );
 }
 
 getFieldError(fieldName:string):string | null{
@@ -55,7 +58,16 @@ getFieldError(fieldName:string):string | null{
 }
 
 
-
+onSave(){
+  if(this.myForm.invalid){
+    this.myForm.markAllAsTouched();
+    return;
+  }
+  this.myForm.reset({
+    price:0,
+    inStorage:0
+  })
+}
 
 
 }
