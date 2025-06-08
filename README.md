@@ -34,4 +34,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 2. Creando los directorios
 3. Configuración inicial de las rutas
 4. Rutas Padre y Temple HTML
+5. ReactiveForms - FromGroup, FormControl, FormBuilder, Validaciones de campos incluidos
 ```
