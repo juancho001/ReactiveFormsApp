@@ -35,4 +35,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 3. Configuración inicial de las rutas
 4. Rutas Padre y Temple HTML
 5. ReactiveForms - FromGroup, FormControl, FormBuilder, Validaciones de campos incluidos
+6. Mostrar Errores del Formulario en Pantalla
 ```
