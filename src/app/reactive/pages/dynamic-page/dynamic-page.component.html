@@ -8,9 +8,11 @@
     <label class="col-sm-3 col-form-label">Nombre</label>
     <div class="col-sm-9">
       <input class="form-control" placeholder="Nombre de la persona" formControlName="name">
+      @if (formUtils.isValidField(myFormDinamic,'name')) {
       <span class="form-text text-danger">
-        error message
+        {{ formUtils.getFieldError(myFormDinamic,'name')}}
       </span>
+      }
     </div>
   </div>
 
@@ -44,9 +46,12 @@
               Eliminar
             </button>
           </div>
+          @if (formUtils.isValidFieldInArray(favoriteGames,i)) {
           <span class="form-text text-danger">
-            Este campo es requerido
+            {{formUtils.getFieldErrorInArray(favoriteGames,i)}}
+           <!-- {{formUtils.getFieldError(myFormDinamic,'')}} -->
           </span>
+          }
         </div>
       }
     </div>

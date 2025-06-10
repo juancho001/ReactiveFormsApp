@@ -39,4 +39,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 7. Mejorar la visualización de errores y la experiencia de usuario
 8. Reutilización de la Lógica entre Formularios
 9. Formularios Dinamicos con Arreglos
+10. Mostrar errores por pantalla de los Formularios dinamicos con Arreglos
 ```
