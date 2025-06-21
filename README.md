@@ -40,4 +40,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 8. Reutilización de la Lógica entre Formularios
 9. Formularios Dinamicos con Arreglos
 10. Mostrar errores por pantalla de los Formularios dinamicos con Arreglos
+11. Agregar y Eliminar controles del Formulario
 ```
