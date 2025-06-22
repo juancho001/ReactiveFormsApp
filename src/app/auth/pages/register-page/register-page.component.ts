@@ -16,7 +16,7 @@ export class RegisterPageComponent {
 
   myForm: FormGroup = this.formBuilder.group({
     name: [null, [Validators.required, Validators.pattern(this.formUtil.namePattern)]],
-    email: [null, [Validators.required, Validators.email, Validators.pattern(this.formUtil.emailPattern)]],
+    email: [null, [Validators.required, Validators.email, Validators.pattern(this.formUtil.emailPattern)],[FormUtils.chekingServerResponse]],
     username: [null, [Validators.required, Validators.minLength(6), Validators.pattern(this.formUtil.notOnlySpacesPattern)]],
     passwords: [null, [Validators.required, Validators.minLength(8), Validators.pattern(this.formUtil.passwordPattern)]],
     confirmPasswords: [null, [Validators.required, Validators.pattern(this.formUtil.passwordPattern)]],
@@ -25,6 +25,8 @@ export class RegisterPageComponent {
       validators: [this.formUtil.isFieldOneEqualsToFieldTwo('passwords', 'confirmPasswords')]
    }
   )
+
+
 
 
 

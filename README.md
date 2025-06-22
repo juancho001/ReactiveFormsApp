@@ -45,4 +45,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 13. Formulario de registro basico
 14. Validacion de Expresiones regulares
 15. Validacion Personalizada de Campos iguales
+16. Validaciones Asíncronas
 ```
