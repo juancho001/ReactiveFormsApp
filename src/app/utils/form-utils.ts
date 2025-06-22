@@ -62,6 +62,8 @@ export class FormUtils {
           return `El valor ingresado no es un correo valido..`;
         case 'emailTaken':
           return `Este correo ya esta siendo usado por otro usuario..`;
+        case 'noStraider':
+          return `Este usuario ya se encuentra en uso.`;
         case 'pattern':
           if (errors['pattern'].requiredPattern == this.namePattern) {
             return `Debe Ingresar el Nombre y Apellido del usuario.`
@@ -104,7 +106,14 @@ export class FormUtils {
   }
 
 
-
+  static notStrider(control: AbstractControl):ValidationErrors | null{
+  console.log('validando usuario en el servidor');
+  const striderValue = control.value;
+  if (striderValue == 'strider'){
+    return {noStraider:true}
+  }
+    return null
+  }
 
 
   // static onSave(form:FormGroup ){
