@@ -1,4 +1,4 @@
-import { FormArray, FormGroup, ValidationErrors } from "@angular/forms";
+import { AbstractControl, FormArray, FormGroup, ValidationErrors } from "@angular/forms";
 
 export class FormUtils {
 
@@ -51,7 +51,6 @@ export class FormUtils {
         case 'email':
           return `El valor ingresado no es un correo valido..`;
         case 'pattern':
-          console.log(errors['pattern'].requiredPattern);
           if(errors['pattern'].requiredPattern == this.namePattern){
             return `Debe Ingresar el Nombre y Apellido del usuario.`
           }
@@ -73,7 +72,13 @@ export class FormUtils {
     return null;
   }
 
-
+ static isFieldOneEqualsToFieldTwo(field1: string, field2: string) {
+    return (formGroup: AbstractControl) => {
+      const valueField1 = formGroup.get(field1)?.value;
+      const valueField2 = formGroup.get(field2)?.value;
+      return valueField1 == valueField2 ? null : { passwordsNotEquals: true }
+    };
+  }
 
   // static onSave(form:FormGroup ){
   //   if(form.invalid){

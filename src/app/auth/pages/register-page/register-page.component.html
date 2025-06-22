@@ -2,101 +2,101 @@
 <hr>
 
 <div class="row">
-    <div class="col">
+  <div class="col">
 
-        <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="onSubmit()">
 
-            <!-- Nombre -->
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Nombre y apellido</label>
-                <div class="col-sm-9">
-                    <input type="text"
-                           class="form-control"
-                           placeholder="Nombre del usuario" formControlName="name" >
+      <!-- Nombre -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Nombre y apellido</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" placeholder="Nombre del usuario" formControlName="name">
 
-                    @if(formUtil.isValidField(myForm,'name')){
-                          <span class="form-text text-danger">
-                          {{formUtil.getFieldError(myForm,'name')}}
-                          </span>
-                    }
-                </div>
-            </div>
+          @if(formUtil.isValidField(myForm,'name')){
+          <span class="form-text text-danger">
+            {{formUtil.getFieldError(myForm,'name')}}
+          </span>
+          }
+        </div>
+      </div>
 
-            <!-- Email -->
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Email</label>
-                <div class="col-sm-9">
-                    <input type="email"
-                           class="form-control"
-                           placeholder="Email del usuario" formControlName="email">
+      <!-- Email -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" placeholder="Email del usuario" formControlName="email">
 
-                    @if(formUtil.isValidField(myForm,'email')){
-                          <span class="form-text text-danger">
-                          {{formUtil.getFieldError(myForm,'email')}}
-                          </span>
-                    }
-                </div>
-            </div>
+          @if(formUtil.isValidField(myForm,'email')){
+          <span class="form-text text-danger">
+            {{formUtil.getFieldError(myForm,'email')}}
+          </span>
+          }
+        </div>
+      </div>
 
-            <!-- Username -->
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Username</label>
-                <div class="col-sm-9">
-                    <input type="text"
-                           class="form-control"
-                           placeholder="Nombre código del usuario" formControlName="username">
-                    @if(formUtil.isValidField(myForm,'username')){
-                          <span class="form-text text-danger">
-                          {{formUtil.getFieldError(myForm,'username')}}
-                          </span>
-                    }
-                </div>
-            </div>
+      <!-- Username -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Username</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" placeholder="Nombre código del usuario" formControlName="username">
+          @if(formUtil.isValidField(myForm,'username')){
+          <span class="form-text text-danger">
+            {{formUtil.getFieldError(myForm,'username')}}
+          </span>
+          }
+        </div>
+      </div>
 
-            <!-- Password -->
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Password</label>
-                <div class="col-sm-9">
-                    <input type="password"
-                           class="form-control"
-                           placeholder="Password de su cuenta" formControlName="passwords">
+      <!-- Password -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" placeholder="Password de su cuenta" formControlName="passwords">
 
-                    @if(formUtil.isValidField(myForm,'passwords')){
-                          <span class="form-text text-danger">
-                          {{formUtil.getFieldError(myForm,'passwords')}}
-                          </span>
-                    }
-                </div>
-            </div>
+          @if(formUtil.isValidField(myForm,'passwords')){
+          <span class="form-text text-danger">
+            {{formUtil.getFieldError(myForm,'passwords')}}
+          </span>
+          }
+        </div>
+      </div>
 
-            <!-- Password2 -->
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Confirmar</label>
-                <div class="col-sm-9">
-                    <input type="password"
-                           class="form-control"
-                           placeholder="Confirmar la contraseña"  formControlName="confirmPasswords">
-                    @if(formUtil.isValidField(myForm,'confirmPasswords')){
-                          <span class="form-text text-danger">
-                          {{formUtil.getFieldError(myForm,'confirmPasswords')}}
-                          </span>
-                    }
-                </div>
-            </div>
+      <!-- Password2 -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Confirmar</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" placeholder="Confirmar la contraseña"
+            formControlName="confirmPasswords">
+          @if(formUtil.isValidField(myForm,'confirmPasswords')){
+          <span class="form-text text-danger">
+            {{formUtil.getFieldError(myForm,'confirmPasswords')}}
+          </span>
+          }
+        </div>
+      </div>
 
 
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-primary float-end"
-                            type="submit">
-                        Crear
-                    </button>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col">
+
+          <span>
+            @if ( myForm.errors && myForm.touched) {
+            <span class="form-text text-danger">
+              Las Passwords no coinciden..
+            </span>
+            }
+          </span>
 
 
-        </form>
-    </div>
+          <button class="btn btn-primary float-end" type="submit">
+            Crear
+          </button>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
 </div>
 
 
