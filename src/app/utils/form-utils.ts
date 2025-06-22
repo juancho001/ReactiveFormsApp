@@ -1,6 +1,14 @@
 import { FormArray, FormGroup, ValidationErrors } from "@angular/forms";
 
 export class FormUtils {
+
+    // Expresiones regulares
+  static namePattern = '^([a-zA-Z]+) ([a-zA-Z]+)$';
+  static emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+  static notOnlySpacesPattern = '^[a-zA-Z0-9]+$';
+  static passwordPattern = '^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$';
+
+
   static isValidField(form: FormGroup, fielName: string): boolean | null {
     //  console.log(this.myForm.controls[fielName].valid)
     return (form.controls[fielName].errors && form.controls[fielName].touched);
@@ -42,11 +50,30 @@ export class FormUtils {
           return `Valor minimo de ${errors['min'].min}`;
         case 'email':
           return `El valor ingresado no es un correo valido..`;
+        case 'pattern':
+          console.log(errors['pattern'].requiredPattern);
+          if(errors['pattern'].requiredPattern == this.namePattern){
+            return `Debe Ingresar el Nombre y Apellido del usuario.`
+          }
+          if(errors['pattern'].requiredPattern == this.emailPattern){
+            return `Verifique que la estructura del email sea valida.`
+          }
+          if(errors['pattern'].requiredPattern == this.notOnlySpacesPattern){
+            return `El nombre del usuario no debe tener espacios.`
+          }
+          if(errors['pattern'].requiredPattern == this.passwordPattern){
+            return `El Passwords debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico.`
+          }
+          return `Los datos ingresados en el campo no son validos`
+        default:
+          return `Verifique los datos ingresados en el campo..`
       }
 
     }
     return null;
   }
+
+
 
   // static onSave(form:FormGroup ){
   //   if(form.invalid){

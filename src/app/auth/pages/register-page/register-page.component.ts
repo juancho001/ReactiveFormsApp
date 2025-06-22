@@ -15,11 +15,11 @@ export class RegisterPageComponent {
   formUtil = FormUtils
 
   myForm:FormGroup = this.formBuilder.group({
-    name:[null,Validators.required],
-    email:[null,Validators.required,Validators.email],
-    username:[null,Validators.required,Validators.minLength(6)],
-    passwords:[null,Validators.required,Validators.minLength(6)],
-    confirmPasswords:[null,Validators.required]
+    name:[null,[Validators.required,Validators.pattern(this.formUtil.namePattern)]],
+    email:[null,[Validators.required,Validators.email,Validators.pattern(this.formUtil.emailPattern)]],
+    username:[null,[Validators.required,Validators.minLength(6),Validators.pattern(this.formUtil.notOnlySpacesPattern)]],
+    passwords:[null,[Validators.required,Validators.minLength(6),Validators.pattern(this.formUtil.passwordPattern)]],
+    confirmPasswords:[null,[Validators.required,Validators.pattern(this.formUtil.passwordPattern)]]
 })
 
 onSubmit(){
