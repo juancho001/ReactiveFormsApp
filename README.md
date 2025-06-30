@@ -48,4 +48,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 16. Validaciones Asíncronas
 17. Validacion Personalizada Síncrona
 18. Preparación Formulario de Regiones
+19. Primer Selector controlado - Continentes
 ```

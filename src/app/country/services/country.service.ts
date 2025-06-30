@@ -14,7 +14,7 @@ export class CountryService {
     return [...this._regions];
   }
 
-  getCountryByRegion(region: string): Observable<Country[]> {
+  getCountriesByRegion(region: string): Observable<Country[]> {
     if (!region) return of([]);
 
     const url = `${this.baseUrl}/region/${region}?fields=cca3,name,borders`
@@ -28,7 +28,7 @@ export class CountryService {
   }
 
   getCountryBoderByCodes(borders:string[]){
-    // Todo: Por Hacer
+    // TODO: Por Hacer
   }
 
 }
