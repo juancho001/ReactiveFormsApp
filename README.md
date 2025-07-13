@@ -50,4 +50,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 18. Preparación Formulario de Regiones
 19. Primer Selector controlado - Continentes
 20. Suscribirse a los cambios del formulario
+21. Llenar el tercer selector del formulario de Paises
 ```
